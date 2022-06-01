@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:29:11 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/01 17:40:04 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/01 19:08:22 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strrchr(const char *s, int c)
 	cc = (char) c;
 	while (*s)
 	{
-		while (*s && *s != c)
+		while (*s && *s != cc)
 			s++;
-		if (*s == c)
+		if (*s == cc)
 			to_return = (char *) s;
 		if (*s == '\0')
 			break ;

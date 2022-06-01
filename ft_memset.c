@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 13:41:56 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/01 15:05:56 by tanukool         ###   ########.fr       */
+/*   Created: 2022/06/01 15:55:07 by tanukool          #+#    #+#             */
+/*   Updated: 2022/06/01 16:20:29 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	return (c >= 0 && c <= 127);
+	unsigned char	uc;
+	unsigned char	*ub;
+	size_t			i;
+
+	uc = c;
+	ub = (unsigned char *) b;
+	i = 0;
+	while (i < len)
+		ub[i++] = uc;
+	return (b);
 }

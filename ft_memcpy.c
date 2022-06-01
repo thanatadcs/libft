@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 13:41:56 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/01 15:05:56 by tanukool         ###   ########.fr       */
+/*   Created: 2022/06/01 16:09:32 by tanukool          #+#    #+#             */
+/*   Updated: 2022/06/01 16:30:19 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	return (c >= 0 && c <= 127);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *) dst)[i] = ((char *) src)[i];
+		i++;
+	}
+	return (dst);
 }

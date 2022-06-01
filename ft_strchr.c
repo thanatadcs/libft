@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 13:41:56 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/01 15:05:56 by tanukool         ###   ########.fr       */
+/*   Created: 2022/06/01 17:15:39 by tanukool          #+#    #+#             */
+/*   Updated: 2022/06/01 17:27:01 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	return (c >= 0 && c <= 127);
+	char	cc;
+
+	cc = (char) c;
+	while (*s && *s != cc)
+		s++;
+	if (cc == *s)
+		return ((char *) s);
+	return (0);
 }

@@ -6,16 +6,16 @@
 #    By: tanukool <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 14:58:23 by tanukool          #+#    #+#              #
-#    Updated: 2022/06/01 19:16:44 by tanukool         ###   ########.fr        #
+#    Updated: 2022/06/02 22:06:21 by tanukool         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=gcc
-CFLAGS= -Wall -Werror -Wextra
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
-SRCS = ft_strncmp.c ft_strrchr.c ft_strchr.c ft_memmove.c ft_memcpy.c ft_bzero.c ft_memset.c ft_tolower.c ft_toupper.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_strlen.c
+SRCS = ft_strlcat.c ft_strlcpy.c ft_memcmp.c ft_memchr.c ft_strncmp.c ft_strrchr.c ft_strchr.c ft_memmove.c ft_memcpy.c ft_bzero.c ft_memset.c ft_tolower.c ft_toupper.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_strlen.c
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -32,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean
+.PHONY: all clean fclean re

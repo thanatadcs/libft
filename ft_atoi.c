@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 03:02:09 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 13:32:12 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:18:18 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@ static int	my_isspace(int c)
 	unsigned char	cc;
 
 	cc = (unsigned char) c;
-	if (c < 0)
-		return (-1);
 	return ((cc >= '\t' && cc <= '\r') || c == ' ');
 }
 

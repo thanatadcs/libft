@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:03:02 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 14:13:39 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 14:20:45 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	*strdup_until(const char *s1, char c)
 static size_t	count_word(char const *s, char c)
 {
 	size_t	count;
-	int	is_word;
+	int		is_word;
 
 	count = 0;
 	is_word = 1;

@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:38:34 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 16:53:37 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:31:05 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stddef.h>
 # include <stdlib.h>
-# include <errno.h>
 # include <unistd.h>
 # define ABS(n) ((n < 0) ? -1 * (n) : n)
 

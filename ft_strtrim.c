@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:48:54 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 12:57:11 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:17:36 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,38 @@ static int	is_contain(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	return_len;
-	size_t	i;
+	size_t	front;
+	size_t	back;
 	char	*to_return;
 
-	return_len = 0;
-	i = 0;
-	while (s1[i])
-		if (!is_contain(s1[i++], set))
-			return_len++;
-	to_return = malloc((return_len + 1) * sizeof(char));
-	if (to_return == 0)
-		return (0);
-	i = 0;
-	while (*s1)
+	front = 0;
+	back = 0;
+	while (s1[back] && s1[back + 1])
+		back++;
+	if (front == back && is_contain(*s1, set))
+		return (calloc(1, 1));
+	while (s1[front] && is_contain(s1[front], set))
+		front++;
+	while (front < back && is_contain(s1[back], set))
+		back--;
+	if (front <= back)
 	{
-		if (!is_contain(*s1, set))
-			to_return[i++] = *s1;
-		s1++;
+		to_return = malloc(back - front + 2);
+		ft_strlcpy(to_return, s1 + front, back - front + 2);
 	}
-	to_return[i] = '\0';
+	else
+	{
+		to_return = malloc(1);
+		to_return[0] = '\0';
+	}
 	return (to_return);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	*s = ft_strtrim("abcdba", "acb");
+	printf("%s\n", s);
+}
+*/

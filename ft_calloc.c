@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 03:59:17 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 11:45:05 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:29:25 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ static int	is_mul_overflow(size_t a, size_t b)
 
 void	*ft_calloc(size_t count, size_t size)
 {
+	void	*to_return;
+	size_t	return_len;
+
 	if (is_mul_overflow(count, size))
 		return (0);
-	return (malloc(count * size));
+	return_len = count * size;
+	to_return = malloc(return_len * sizeof(char));
+	ft_bzero(to_return, return_len);
+	return (to_return);
 }

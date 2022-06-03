@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:50:23 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 22:28:25 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/04 00:21:51 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		return_len = s_len - start;
 	to_return = malloc((return_len + 1) * sizeof(char));
+	if (to_return == 0)
+		return (0);
 	ft_strlcpy(to_return, s + start, return_len + 1);
 	return (to_return);
 }

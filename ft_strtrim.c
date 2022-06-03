@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:48:54 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 21:45:35 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 23:36:22 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,27 @@ static int	is_contain(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	front;
-	size_t	back;
-	size_t	return_len;
-	char	*to_return;
+	size_t	start;
+	size_t	end;
 
-	front = 0;
-	back = 0;
-	while (s1[back] && s1[back + 1])
-		back++;
-	if (front == back && is_contain(*s1, set))
-		return (calloc(1, 1));
-	while (s1[front] && is_contain(s1[front], set))
-		front++;
-	while (front < back && is_contain(s1[back], set))
-		back--;
-	if (front <= back)
-		return_len = back - front + 1;
-	else
-		return_len = 0;
-	to_return = malloc((return_len + 1) * sizeof(char));
-	if (to_return == 0)
-		return (0);
-	ft_strlcpy(to_return, s1 + front, return_len + 1);
-	return (to_return);
+	if (*s1 == '\0' || *set == '\0')
+		return (ft_strdup(s1));
+	start = 0;
+	end = 0;
+	while (is_contain(s1[start], set))
+		start++;
+	while (s1[end])
+		end++;
+	if (s1[start] == '\0' || end == 0)
+		return (ft_calloc(1, 1));
+	while (end >= 1 && is_contain(s1[end - 1], set))
+		end--;
+	if (start > end)
+		return (ft_calloc(1, 1));
+	return (ft_substr(s1, start, end - start));
+}
+
+int	main(void)
+{
+	ft_strtrim("abdabc", "abc");
 }

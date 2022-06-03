@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:48:54 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 20:17:36 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:45:35 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	front;
 	size_t	back;
+	size_t	return_len;
 	char	*to_return;
 
 	front = 0;
@@ -37,23 +38,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (front < back && is_contain(s1[back], set))
 		back--;
 	if (front <= back)
-	{
-		to_return = malloc(back - front + 2);
-		ft_strlcpy(to_return, s1 + front, back - front + 2);
-	}
+		return_len = back - front + 1;
 	else
-	{
-		to_return = malloc(1);
-		to_return[0] = '\0';
-	}
+		return_len = 0;
+	to_return = malloc((return_len + 1) * sizeof(char));
+	if (to_return == 0)
+		return (0);
+	ft_strlcpy(to_return, s1 + front, return_len + 1);
 	return (to_return);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s = ft_strtrim("abcdba", "acb");
-	printf("%s\n", s);
-}
-*/

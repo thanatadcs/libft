@@ -6,11 +6,11 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 03:02:09 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 03:27:16 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:46:21 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	unsigned char	cc;
 

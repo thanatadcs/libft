@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 03:59:17 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 11:45:05 by tanukool         ###   ########.fr       */
+/*   Created: 2022/06/03 11:23:51 by tanukool          #+#    #+#             */
+/*   Updated: 2022/06/03 11:38:42 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_mul_overflow(size_t a, size_t b)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	prod;
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*to_return;
 
-	if (a == 0 || b == 0)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	to_return = malloc((s1_len + s2_len + 1) * sizeof(char));
+	if (to_return == 0)
 		return (0);
-	prod = a * b;
-	if (a == prod / b)
-		return (0);
-	return (1);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	if (is_mul_overflow(count, size))
-		return (0);
-	return (malloc(count * size));
+	ft_strlcpy(to_return, s1, s1_len + 1);
+	ft_strlcat(to_return + s1_len, s2, s1_len + s2_len + 1);
+	return (to_return);
 }

@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 03:59:17 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 11:45:05 by tanukool         ###   ########.fr       */
+/*   Created: 2022/06/03 10:50:23 by tanukool          #+#    #+#             */
+/*   Updated: 2022/06/03 11:32:21 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_mul_overflow(size_t a, size_t b)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	prod;
+	char	*to_return;
+	size_t	s_len;
+	size_t	return_len;
 
-	if (a == 0 || b == 0)
+	s_len = ft_strlen(s);
+	if (start + 1 > s_len)
+		return_len = 0;
+	else if (s_len - start > len)
+		return_len = len;
+	else
+		return_len = s_len - start;
+	to_return = malloc((return_len + 1) * sizeof(char));
+	if (to_return == 0)
 		return (0);
-	prod = a * b;
-	if (a == prod / b)
-		return (0);
-	return (1);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	if (is_mul_overflow(count, size))
-		return (0);
-	return (malloc(count * size));
+	ft_strlcpy(to_return, s + start, return_len + 1);
+	return (to_return);
 }

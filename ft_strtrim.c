@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:48:54 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 23:36:22 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/04 01:07:48 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (start > end)
 		return (ft_calloc(1, 1));
 	return (ft_substr(s1, start, end - start));
-}
-
-int	main(void)
-{
-	ft_strtrim("abdabc", "abc");
 }

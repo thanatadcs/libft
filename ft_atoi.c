@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 03:02:09 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 21:18:18 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/04 11:25:18 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	my_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	int	to_return;
+	long	to_return;
 	int	sign;
 
 	to_return = 0;
@@ -31,6 +31,25 @@ int	ft_atoi(const char *str)
 		if (*str++ == '-')
 			sign *= -1;
 	while (*str >= '0' && *str <= '9')
+	{
+		if (to_return > to_return * 10 + *str -'0')
+		{
+			if (sign == -1)
+				return (0);
+			else
+				return (-1);
+		}
 		to_return = to_return * 10 + *str++ - '0';
+	}
 	return (sign * to_return);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int	main(void)
+{
+	char	*a = "9223372036854775810";
+	printf("%d, %d", atoi(a), ft_atoi(a));
+}
+*/

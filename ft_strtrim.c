@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:48:54 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/04 01:07:48 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:39:41 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	if (*s1 == '\0' || *set == '\0')
+	if (s1 == 0)
+		return (0);
+	else if (*s1 == '\0' || *set == '\0')
 		return (ft_strdup(s1));
 	start = 0;
 	end = 0;

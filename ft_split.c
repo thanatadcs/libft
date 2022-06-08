@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:03:02 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/08 10:59:37 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:41:11 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	**ft_split(char const *s, char c)
 	char	**to_return;
 	size_t	i;
 
+	if (s == 0)
+		return (0);
 	to_return = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (to_return == 0)
 		return (0);
@@ -85,20 +87,3 @@ char	**ft_split(char const *s, char c)
 	to_return[i] = 0;
 	return (to_return);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	char **s = ft_split("hello!", ' ');
-	int	i = 0;
-	while (s[i])
-	{
-		printf("%s\n", s[i]);
-		free(s[i]);
-		i++;
-	}
-	free(s);	
-}
-*/

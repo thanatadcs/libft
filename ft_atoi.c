@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 03:02:09 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/04 11:32:17 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:07:05 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * to_return);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	char	*a = "9223372036854775810";
-	printf("%d, %d", atoi(a), ft_atoi(a));
-}
-*/

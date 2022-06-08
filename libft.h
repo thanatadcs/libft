@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:38:34 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 17:31:05 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:50:25 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define ABS(n) ((n < 0) ? -1 * (n) : n)
 
 size_t	ft_strlen(const char *s);
 int		ft_isprint(int c);

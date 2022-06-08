@@ -6,20 +6,27 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:29:28 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 15:34:57 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:54:20 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digit(int n)
+static int	my_abs(int n)
+{
+	if (n < 0)
+		return (-1 * n);
+	return (n);
+}
+
+static int	count_digit(int n)
 {
 	if (n == -2147483648)
 		return (10);
-	else if (ABS(n) <= 9)
+	else if (my_abs(n) <= 9)
 		return (1);
 	else
-		return (count_digit(ABS(n) / 10) + 1);
+		return (count_digit(my_abs(n) / 10) + 1);
 }
 
 char	*ft_itoa(int n)
@@ -42,7 +49,7 @@ char	*ft_itoa(int n)
 			to_return[return_len] = '-';
 			break ;
 		}
-		to_return[return_len--] = ABS(n % 10) + '0';
+		to_return[return_len--] = my_abs(n % 10) + '0';
 		n /= 10;
 	}
 	return (to_return);

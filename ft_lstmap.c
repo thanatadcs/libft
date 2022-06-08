@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:32:44 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/08 17:28:23 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/09 00:37:47 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static t_list	*nodemap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*new_content;
 
 	new_content = f(lst->content);
+	if (new_content == 0)
+		return (0);
 	new_node = ft_lstnew(new_content);
 	if (new_node == 0)
 	{

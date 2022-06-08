@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:03:02 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 14:20:45 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 10:59:37 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static char	*strdup_until(const char *s1, char c)
 
 	s1_len = strlen_until(s1, c);
 	to_return = malloc((s1_len + 1) * sizeof(char));
-	i = 0;
 	if (to_return == 0)
 		return (0);
+	i = 0;
 	while (s1[i] && s1[i] != c)
 	{
 		to_return[i] = s1[i];
@@ -69,9 +69,9 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	to_return = malloc((count_word(s, c) + 1) * sizeof(char *));
-	i = 0;
 	if (to_return == 0)
 		return (0);
+	i = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
@@ -85,3 +85,20 @@ char	**ft_split(char const *s, char c)
 	to_return[i] = 0;
 	return (to_return);
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int	main(void)
+{
+	char **s = ft_split("hello!", ' ');
+	int	i = 0;
+	while (s[i])
+	{
+		printf("%s\n", s[i]);
+		free(s[i]);
+		i++;
+	}
+	free(s);	
+}
+*/

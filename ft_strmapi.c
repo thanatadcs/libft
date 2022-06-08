@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 15:55:48 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 16:00:51 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:52:11 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	return_len;
 	size_t	i;
 
+	if (s == 0 || f == 0)
+		return (0);
 	return_len = ft_strlen(s);
 	to_return = malloc((return_len + 1) * sizeof(char));
 	if (to_return == 0)

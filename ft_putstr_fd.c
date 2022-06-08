@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:48:43 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 16:49:56 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:53:41 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (s == 0)
+		return ;
 	while (*s)
 		ft_putchar_fd(*s++, fd);
 }

@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:03:02 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/08 11:41:11 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:00:19 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static size_t	strlen_until(const char *s1, char c)
 	size_t	i;
 
 	i = 0;
+	if (s1 == 0)
+		return (0);
 	while (s1[i] && s1[i] != c)
 		i++;
 	return (i);
@@ -28,6 +30,8 @@ static char	*strdup_until(const char *s1, char c)
 	size_t	s1_len;
 	size_t	i;
 
+	if (s1 == 0)
+		return (0);
 	s1_len = strlen_until(s1, c);
 	to_return = malloc((s1_len + 1) * sizeof(char));
 	if (to_return == 0)
@@ -49,6 +53,8 @@ static size_t	count_word(char const *s, char c)
 
 	count = 0;
 	is_word = 1;
+	if (s == 0)
+		return (0);
 	while (*s)
 	{
 		if (*s == c)

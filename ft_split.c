@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:03:02 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/08 12:00:19 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:45:24 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,17 @@ static size_t	count_word(char const *s, char c)
 	return (count);
 }
 
+static char	**free_until(char **strs, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i <= n)
+		free(strs[i++]);
+	free(strs);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**to_return;
@@ -86,7 +97,10 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s == '\0')
 			break ;
-		to_return[i++] = strdup_until(s, c);
+		to_return[i] = strdup_until(s, c);
+		if (to_return[i] == 0)
+			return (free_until(to_return, i));
+		i++;
 		while (*s && *s != c)
 			s++;
 	}

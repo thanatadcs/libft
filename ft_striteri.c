@@ -6,7 +6,7 @@
 /*   By: tanukool <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:02:11 by tanukool          #+#    #+#             */
-/*   Updated: 2022/06/03 16:05:23 by tanukool         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:04:46 by tanukool         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
+	if (s == 0 || f == 0)
+		return ;
 	i = 0;
 	while (s[i])
 	{

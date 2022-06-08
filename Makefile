@@ -6,11 +6,11 @@
 #    By: tanukool <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 14:58:23 by tanukool          #+#    #+#              #
-#    Updated: 2022/06/08 16:32:00 by tanukool         ###   ########.fr        #
+#    Updated: 2022/06/08 18:09:08 by tanukool         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
